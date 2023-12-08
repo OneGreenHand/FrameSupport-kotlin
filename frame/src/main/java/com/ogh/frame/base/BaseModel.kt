@@ -137,12 +137,12 @@ class BaseModel(builder: Builder) {
 
             override fun onNext(requestBody: ResponseBody) {
                 try { //解析json
-                    val bean: B = GsonUtil.getBean(requestBody.string(), clazz)
-                    mIsEmpty = bean.isEmpty()
-                    if (bean.code == 200) {
-                        mBuilder.mBaseRequestView.requestSuccess(bean as Nothing, mBuilder.requestTag ?: tag, mBuilder.pageIndex, mBuilder.pageCount)
+                    val bean: B  = GsonUtil.getBean(requestBody.string(), clazz)
+                    mIsEmpty = bean.isEmpty
+                    if (bean.errorCode == 0) {
+                        mBuilder.mBaseRequestView.requestSuccess(bean, mBuilder.requestTag ?: tag, mBuilder.pageIndex, mBuilder.pageCount)
                     } else
-                        mBuilder.mBaseRequestView.requestFail(bean as Nothing, mBuilder.requestTag ?: tag)
+                        mBuilder.mBaseRequestView.requestFail(bean, mBuilder.requestTag ?: tag)
                 } catch (e: Exception) {
                     e.printStackTrace()
                     if (BaseConfig.DEBUG) {

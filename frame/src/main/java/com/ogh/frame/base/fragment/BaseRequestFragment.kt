@@ -28,8 +28,8 @@ abstract class BaseRequestFragment<T : ViewBinding, P : BasePresenter<*>, B : Ba
 
     abstract fun setPresenter(): P
 
-    override fun requestFail(data: B, tag: Any) {
-        ToastUtil.showShortToast(data.msg)
+    override fun requestFail(data: BaseBean, tag: Any) {
+        ToastUtil.showShortToast(data.errorMsg)
     }
 
     open fun reRequest() {}

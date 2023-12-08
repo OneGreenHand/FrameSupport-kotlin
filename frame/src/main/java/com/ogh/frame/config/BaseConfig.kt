@@ -14,10 +14,10 @@ object BaseConfig {
     //通用请求地址
     fun getUrl(): String {
         return if (DEBUG) {
-            "https://api.apiopen.top/"
+            "https://www.wanandroid.com/"
         } else {
             val urls = SPStaticUtils.getString("baseUrl")
-            if (TextUtils.isEmpty(urls)) "https://api.apiopen.top/" else urls
+            if (TextUtils.isEmpty(urls)) "https://www.wanandroid.com/" else urls
         }
     }
 

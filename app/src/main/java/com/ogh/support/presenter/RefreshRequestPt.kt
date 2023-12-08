@@ -3,21 +3,18 @@ package com.ogh.support.presenter
 import com.ogh.frame.base.BaseModel
 import com.ogh.frame.base.BasePresenter
 import com.ogh.support.api.API
-import com.ogh.support.bean.DuanZiBean
+import com.ogh.support.bean.WenZhangBean
 import com.ogh.support.view.activity.RefreshRequestActivity
 
 class RefreshRequestPt(activity: RefreshRequestActivity) : BasePresenter<RefreshRequestActivity>(activity) {
     /**
-     * 获取段子
+     * 首页文章列表
      */
-    fun getDuanZiList(page: Int) {
+    fun getWenZhangList(page: Int) {
         createRequestBuilder()
-            .setLoadStyle(if (page == 1) BaseModel.LoadStyle.DIALOG else BaseModel.LoadStyle.NONE)
+            .setLoadStyle(if (page == 0) BaseModel.LoadStyle.DIALOG else BaseModel.LoadStyle.NONE)
             .setPageIndex(page)
-            .putParam("type", "text")
-            .putParam("page", page)
-            .putParam("count", "15")
             .create()
-            .post(API.GET_DUAN_ZI, DuanZiBean::class.java)
+            .get(API.GET_WEN_ZHANG+ "/$page/json?page_size=15", WenZhangBean::class.java)
     }
 }

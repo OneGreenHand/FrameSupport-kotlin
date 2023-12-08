@@ -57,7 +57,7 @@ class VerificationCode : TextView, LifecycleObserver, BaseRequestView<BaseBean> 
             BaseModel.Builder(this)
                 .putParam("Mobile", phone)
                 .putParam("VCType", codeType.value)
-                .create().post(API.GET_DUAN_ZI) //这里填写真实请求地址
+                .create().post(API.GET_WEN_ZHANG) //这里填写真实请求地址
         }
     }
 
@@ -119,7 +119,7 @@ class VerificationCode : TextView, LifecycleObserver, BaseRequestView<BaseBean> 
     }
 
     override fun requestFail(data: BaseBean, tag: Any) {
-        ToastUtil.showShortToast(data.msg)
+        ToastUtil.showShortToast(data.errorMsg)
     }
 
     override fun requestError(e: Throwable, tag: Any) {

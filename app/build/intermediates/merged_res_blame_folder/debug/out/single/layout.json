@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "E:\\FrameSupport-kotlin\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_head_foot_example.xml",
+        "source": "E:\\FrameSupport-kotlin\\app\\src\\main\\res\\layout\\layout_head_foot_example.xml"
+    },
+    {
+        "merged": "E:\\FrameSupport-kotlin\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home.xml",
+        "source": "E:\\FrameSupport-kotlin\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "E:\\FrameSupport-kotlin\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_web.xml",
+        "source": "E:\\FrameSupport-kotlin\\app\\src\\main\\res\\layout\\activity_web.xml"
+    },
+    {
+        "merged": "E:\\FrameSupport-kotlin\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_titlebar.xml",
+        "source": "E:\\FrameSupport-kotlin\\app\\src\\main\\res\\layout\\layout_titlebar.xml"
+    },
+    {
+        "merged": "E:\\FrameSupport-kotlin\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_common.xml",
+        "source": "E:\\FrameSupport-kotlin\\app\\src\\main\\res\\layout\\item_common.xml"
+    },
+    {
+        "merged": "E:\\FrameSupport-kotlin\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_mine.xml",
+        "source": "E:\\FrameSupport-kotlin\\app\\src\\main\\res\\layout\\fragment_mine.xml"
+    },
+    {
+        "merged": "E:\\FrameSupport-kotlin\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "E:\\FrameSupport-kotlin\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "E:\\FrameSupport-kotlin\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\dialog_tips.xml",
+        "source": "E:\\FrameSupport-kotlin\\app\\src\\main\\res\\layout\\dialog_tips.xml"
+    }
+]

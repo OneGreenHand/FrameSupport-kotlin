@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ogh.frame.base.activity.BaseSwipeActivity
 import com.ogh.frame.bean.BaseBean
-import com.ogh.support.bean.DuanZiBean
+import com.ogh.support.bean.WenZhangBean
 import com.ogh.support.databinding.LayoutHeadFootExampleBinding
 import com.ogh.support.presenter.HeadFootExamplePt
 import com.ogh.support.view.adapter.ExampleAdapter
@@ -16,10 +16,10 @@ import com.ogh.support.view.adapter.ExampleAdapter
  * 添加头部和脚部的示例(带下拉刷新上拉加载)
  */
 class HeadFootExampleActivity : BaseSwipeActivity<LayoutHeadFootExampleBinding, HeadFootExamplePt, BaseBean>() {
-    lateinit var adapter: ExampleAdapter
+    private lateinit var adapter: ExampleAdapter
 
     override fun onRefreshRequest() {
-        mPresenter.duanZiList()
+        mPresenter.getWenZhangList()
     }
 
     override fun setPresenter(): HeadFootExamplePt {
@@ -35,7 +35,7 @@ class HeadFootExampleActivity : BaseSwipeActivity<LayoutHeadFootExampleBinding, 
         initHeadFootView()
         viewBinding.frameRecycleView.adapter=adapter
         adapter.setEmptyView(getEmptyView()) //设置空布局(引用资源文件必须放在setAdapter()后才有效)
-        mPresenter.duanZiList()
+        mPresenter.getWenZhangList()
     }
 
     /**
@@ -57,7 +57,7 @@ class HeadFootExampleActivity : BaseSwipeActivity<LayoutHeadFootExampleBinding, 
     }
 
     override fun requestSuccess(data: BaseBean, tag: Any, pageIndex: Int, pageCount: Int) {
-        val duanZiBean = data as DuanZiBean
-        adapter.setList(duanZiBean.result)
+        val wenZhangBean = data as WenZhangBean
+        adapter.setList(wenZhangBean.data.datas)
     }
 }

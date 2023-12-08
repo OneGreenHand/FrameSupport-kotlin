@@ -3,18 +3,17 @@ package com.ogh.support.presenter
 import com.ogh.frame.base.BaseModel
 import com.ogh.frame.base.BasePresenter
 import com.ogh.support.api.API
-import com.ogh.support.bean.DuanZiBean
+import com.ogh.support.bean.WenZhangBean
 import com.ogh.support.view.activity.HeadFootExampleActivity
 
 class HeadFootExamplePt(activity: HeadFootExampleActivity) : BasePresenter<HeadFootExampleActivity>(activity) {
     /**
-     * 获取段子
+     * 首页文章列表
      */
-    fun duanZiList() {
+    fun getWenZhangList() {
         createRequestBuilder()
             .setLoadStyle(BaseModel.LoadStyle.DIALOG)
-            .putParam("type", "text")
             .create()
-            .post(API.GET_DUAN_ZI, DuanZiBean::class.java)
+            .get(API.GET_WEN_ZHANG + "/0/json", WenZhangBean::class.java)
     }
 }
