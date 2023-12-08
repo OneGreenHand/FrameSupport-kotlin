@@ -99,7 +99,7 @@ class VerificationCode : TextView, LifecycleObserver, BaseRequestView<BaseBean> 
         }
     }
 
-    override fun requestSuccess(data: BaseBean, tag: Any, pageIndex: Int, pageCount: Int) {
+    override fun <B : BaseBean> requestSuccess(data: B, tag: Any, pageIndex: Int, pageCount: Int) {
         countDownTimer = object : CountDownTimer(durationTime.toLong(), intervalTime.toLong()) {
             @SuppressLint("SetTextI18n")
             override fun onTick(millisUntilFinished: Long) {
@@ -118,7 +118,7 @@ class VerificationCode : TextView, LifecycleObserver, BaseRequestView<BaseBean> 
         countDownTimer!!.start() //开始倒计时
     }
 
-    override fun requestFail(data: BaseBean, tag: Any) {
+    override fun <B : BaseBean> requestFail(data: B, tag: Any) {
         ToastUtil.showShortToast(data.errorMsg)
     }
 

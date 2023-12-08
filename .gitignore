@@ -1,15 +1,26 @@
 *.iml
 .gradle
 /local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
 .DS_Store
 /build
 /captures
 .externalNativeBuild
 .cxx
 local.properties
+*.properties
+*.bin
+*/target
+*.iml
+*.class
+target/
+.project
+.settings/
+.classpath
+.gitignore
+# 忽略所有的日志和临时文件
+*.log
+*.tmp
+# 忽略build文件夹
+/build
+# 忽略.idea文件夹
+/.idea
