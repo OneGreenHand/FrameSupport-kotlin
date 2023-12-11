@@ -23,6 +23,6 @@ public class WenZhangBean extends BaseBean {
 
     @Override
     public boolean isEmpty() {
-        return null==data.datas||data.datas.isEmpty();
+        return null == data.datas || data.datas.isEmpty();
     }
 }

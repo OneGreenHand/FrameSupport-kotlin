@@ -10,9 +10,9 @@
         android:gravity="center"
         android:lineSpacingExtra="2dp"
         android:paddingStart="5dp"
-        android:paddingTop="10dp"
+        android:paddingTop="15dp"
         android:paddingEnd="5dp"
-        android:paddingBottom="10dp"
+        android:paddingBottom="15dp"
         android:text="item_title" />
 
     <View style="@style/DividerX" />
