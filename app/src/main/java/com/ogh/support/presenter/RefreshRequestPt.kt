@@ -3,7 +3,7 @@ package com.ogh.support.presenter
 import com.ogh.frame.base.BaseModel
 import com.ogh.frame.base.BasePresenter
 import com.ogh.support.api.API
-import com.ogh.support.bean.WenZhangBean2
+import com.ogh.support.bean.WenZhangBean
 import com.ogh.support.view.activity.RefreshRequestActivity
 
 class RefreshRequestPt(activity: RefreshRequestActivity) : BasePresenter<RefreshRequestActivity>(activity) {
@@ -16,6 +16,6 @@ class RefreshRequestPt(activity: RefreshRequestActivity) : BasePresenter<Refresh
             .setPageIndex(page)
             .setPageCount(10)//改为每页10条，发现有时候没那么多数据,导致无法分页
             .create()
-            .get(API.GET_WEN_ZHANG + "/$page/json?page_size=10", WenZhangBean2::class.java)
+            .get(API.GET_WEN_ZHANG + "/$page/json?page_size=10", WenZhangBean::class.java)
     }
 }

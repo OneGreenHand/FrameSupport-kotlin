@@ -8,7 +8,7 @@ import com.ogh.frame.base.activity.BaseSwipeListActivity
 import com.ogh.frame.bean.BaseBean
 import com.ogh.frame.util.OnItemClickListener2
 import com.ogh.frame.util.ToastUtil
-import com.ogh.support.bean.WenZhangBean2
+import com.ogh.support.bean.WenZhangBean
 import com.ogh.support.databinding.LayoutHeadFootExampleBinding
 import com.ogh.support.presenter.RefreshRequestPt
 import com.ogh.support.view.adapter.ExampleAdapter
@@ -16,9 +16,9 @@ import com.ogh.support.view.adapter.ExampleAdapter
 /**
  * 上拉刷新和下拉加载
  */
-class RefreshRequestActivity : BaseSwipeListActivity<LayoutHeadFootExampleBinding, RefreshRequestPt, BaseBean, WenZhangBean2.DataBean.DatasBean>() {
+class RefreshRequestActivity : BaseSwipeListActivity<LayoutHeadFootExampleBinding, RefreshRequestPt, BaseBean, WenZhangBean.DataBean.DatasBean>() {
 
-    override fun setAdapter(): BaseQuickAdapter<WenZhangBean2.DataBean.DatasBean, BaseQuickHolder> {
+    override fun setAdapter(): BaseQuickAdapter<WenZhangBean.DataBean.DatasBean, BaseQuickHolder> {
         return ExampleAdapter()
     }
 
@@ -43,14 +43,14 @@ class RefreshRequestActivity : BaseSwipeListActivity<LayoutHeadFootExampleBindin
         mPresenter.getWenZhangList(0)
         mBaseAdapter.setOnItemClickListener(object : OnItemClickListener2() {
             override fun onSingleClick(adapter: BaseQuickAdapter<*, *>, view: View, position: Int) {
-                val item = adapter.getItem(position) as WenZhangBean2.DataBean.DatasBean
+                val item = adapter.getItem(position) as WenZhangBean.DataBean.DatasBean
                 ToastUtil.showShortToast(item.title)
             }
         })
     }
 
     override fun requestSuccess(data: BaseBean, tag: Any, pageIndex: Int, pageCount: Int) {
-        val wenZhangBean: WenZhangBean2 = data as WenZhangBean2
+        val wenZhangBean: WenZhangBean = data as WenZhangBean
         notifyAdapterStatus(wenZhangBean.data.datas, pageIndex+1, pageCount)//因为这个接口第一页从0开始的,不改变框架原本的逻辑,页数手动+1
     }
 }

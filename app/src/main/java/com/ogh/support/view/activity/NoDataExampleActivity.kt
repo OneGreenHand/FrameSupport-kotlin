@@ -4,7 +4,7 @@ import android.os.Bundle
 import com.ogh.frame.base.activity.BaseSwipeActivity
 import com.ogh.frame.bean.BaseBean
 import com.ogh.frame.util.ToastUtil
-import com.ogh.support.bean.WenZhangBean2
+import com.ogh.support.bean.WenZhangBean
 import com.ogh.support.databinding.LayoutHeadFootExampleBinding
 import com.ogh.support.presenter.RequestErrorExamplePt
 
@@ -37,7 +37,7 @@ class NoDataExampleActivity : BaseSwipeActivity<LayoutHeadFootExampleBinding, Re
 
     override fun requestSuccess(data: BaseBean, tag: Any, pageIndex: Int, pageCount: Int) {
         //请求完成后返回的数据是空的，在实体bean中isEmpty()为true，baseModel会自动处理,并切换为空布局显示
-        val wenZhangBean: WenZhangBean2 = data as WenZhangBean2
+        val wenZhangBean: WenZhangBean = data as WenZhangBean
         ToastUtil.showShortToast(wenZhangBean.errorMsg)
     }
 }

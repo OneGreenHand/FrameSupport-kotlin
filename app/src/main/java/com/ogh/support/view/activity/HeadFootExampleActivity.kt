@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ogh.frame.base.activity.BaseSwipeActivity
 import com.ogh.frame.bean.BaseBean
-import com.ogh.support.bean.WenZhangBean2
+import com.ogh.support.bean.WenZhangBean
 import com.ogh.support.databinding.LayoutHeadFootExampleBinding
 import com.ogh.support.presenter.HeadFootExamplePt
 import com.ogh.support.view.adapter.ExampleAdapter
@@ -57,7 +57,7 @@ class HeadFootExampleActivity : BaseSwipeActivity<LayoutHeadFootExampleBinding, 
     }
 
     override fun requestSuccess(data: BaseBean, tag: Any, pageIndex: Int, pageCount: Int) {
-        val wenZhangBean = data as WenZhangBean2
+        val wenZhangBean = data as WenZhangBean
         adapter.setList(wenZhangBean.data.datas)
     }
 }
