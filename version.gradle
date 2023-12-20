@@ -22,7 +22,7 @@ ext {
             walle              : "1.1.7",
             autodispose        : "2.2.1",
             rxandroid          : "3.0.2",
-            RecyclerViewAdapter: "3.0.4",
+            RecyclerViewAdapter: "3.0.14",
     ]
 
     // 依赖具体版本
@@ -41,7 +41,7 @@ ext {
                     converter_gson : "com.squareup.retrofit2:converter-gson:${depVersion.retrofit}",
             ],
             //RecyclerViewAdapter
-            RecyclerViewAdapter: "com.github.CymChad:BaseRecyclerViewAdapterHelper:${depVersion.RecyclerViewAdapter}",
+            RecyclerViewAdapter: "io.github.cymchad:BaseRecyclerViewAdapterHelper:${depVersion.RecyclerViewAdapter}",
             //工具类
             utilcode           : "com.blankj:utilcodex:${depVersion.utilcode}",
             //沉浸式状态栏(activity)
