@@ -42,14 +42,14 @@ class TipDialog(context: Context) : BaseDialog(context) {
         content = findViewById(R.id.content)
         cancel = findViewById(R.id.cancel)
         sure = findViewById(R.id.sure)
-        cancel.setOnClickListener(View.OnClickListener {
+        cancel.setOnClickListener {
             cancelCalk?.onCancelClick(cancel)
             dismiss()
-        })
-        sure.setOnClickListener(View.OnClickListener {
+        }
+        sure.setOnClickListener{
             sureCalk?.onSureClick(sure)
             dismiss()
-        })
+        }
     }
 
 //    @Override

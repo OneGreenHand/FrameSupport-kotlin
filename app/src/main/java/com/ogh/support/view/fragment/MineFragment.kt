@@ -1,7 +1,6 @@
 package com.ogh.support.view.fragment
 
 import android.os.Bundle
-import android.view.View
 import com.ogh.frame.base.fragment.BaseFragment
 import com.ogh.support.databinding.FragmentMineBinding
 import com.ogh.support.util.IntentUtil
@@ -16,14 +15,14 @@ class MineFragment : BaseFragment<FragmentMineBinding>() {
     }
 
     private fun setViewClicked() {
-        viewBinding.exampleOne.setOnClickListener(View.OnClickListener {
+        viewBinding.exampleOne.setOnClickListener{
             IntentUtil.goActivity(mActivity, NoDataExampleActivity::class.java)
-        })
-        viewBinding.exampleTwo.setOnClickListener(View.OnClickListener {
+        }
+        viewBinding.exampleTwo.setOnClickListener{
             IntentUtil.goActivity(mActivity, HeadFootExampleActivity::class.java)
-        })
-        viewBinding.exampleThree.setOnClickListener(View.OnClickListener {
+        }
+        viewBinding.exampleThree.setOnClickListener{
             IntentUtil.goActivity(mActivity, RefreshRequestActivity::class.java)
-        })
+        }
     }
 }

@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.MenuItem
-import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.blankj.utilcode.util.AppUtils
@@ -50,19 +49,19 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 return true
             }
         })
-        viewBinding.floatingAction.setOnClickListener(View.OnClickListener {
+        viewBinding.floatingAction.setOnClickListener{
             ToastUtil.showShortToast("当前渠道号为: " + ChannelUtils.getChannel())
-        })
+        }
     }
 
     private fun initViewPagerChangeListener() {
         viewBinding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
-                var position = position
-                super.onPageSelected(position)
-                if (position == 1) //第二个为悬浮按钮
-                    position++
-                val menuItem: MenuItem = viewBinding.navigationView.menu.getItem(position)
+                var newPosition = position
+                super.onPageSelected(newPosition)
+                if (newPosition == 1) //第二个为悬浮按钮
+                    newPosition++
+                val menuItem: MenuItem = viewBinding.navigationView.menu.getItem(newPosition)
                 menuItem.isChecked = true
             }
         })

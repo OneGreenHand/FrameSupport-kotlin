@@ -1,7 +1,6 @@
 package com.ogh.support.view.fragment
 
 import android.os.Bundle
-import android.view.View
 import com.blankj.utilcode.util.FileUtils
 import com.blankj.utilcode.util.NetworkUtils
 import com.ogh.frame.base.fragment.BaseFragment
@@ -18,10 +17,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
     private fun setViewClicked() {
-        viewBinding.videoWeb.setOnClickListener(View.OnClickListener {
+        viewBinding.videoWeb.setOnClickListener{
             WebActivity.openActivity(mActivity)
-        })
-        viewBinding.downloadApk.setOnClickListener(View.OnClickListener {
+        }
+        viewBinding.downloadApk.setOnClickListener{
             if (!NetworkUtils.isWifiConnected()) {
                 ToastUtil.showShortToast("请在wifi状态下下载")
             } else {
@@ -30,13 +29,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 //Tim下载地址,大概110Mb
                 //   }
             }
-        })
-        viewBinding.clearDownloadApk.setOnClickListener(View.OnClickListener {
+        }
+        viewBinding.clearDownloadApk.setOnClickListener{
             if (FileUtils.isFileExists(AppConfig.FilePath.FILE_FOLDER + "TIM_3.5.6.3208_64.apk")) {
                 if (FileUtils.delete(AppConfig.FilePath.FILE_FOLDER + "TIM_3.5.6.3208_64.apk")) {
                     ToastUtil.showShortToast("文件已删除,可以重新下载了")
                 } else ToastUtil.showShortToast("文件删除失败")
             } else ToastUtil.showShortToast("无需清除")
-        })
+        }
     }
 }
